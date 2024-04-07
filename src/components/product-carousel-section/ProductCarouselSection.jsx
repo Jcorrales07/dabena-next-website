@@ -50,12 +50,16 @@ const list = [
 
 const ProductCarouselSection = () => {
     return (
-        <section className=" w-full flex min-h-screen flex-col items-center border-2 border-black">
+        <section className="lg:px-[64px] lg:py-[112px] px-[20px] py-[64px] w-full flex min-h-screen flex-col border-2 border-black">
 
-            {/*Headline*/}
-            {/*sub headline*/}
-            {/*Personalizar las targetas de los productos*/}
-            <ProductCarousel slides={list} options={OPTIONS}/>
+            <div className={'border border-black'}>
+                {/*Headline*/}
+                <h1>Productos Destacados</h1>
+                {/*sub headline*/}
+                <h2>Descubre lo mas querido por nuestros clientes!</h2>
+                {/*Personalizar las targetas de los productos*/}
+                <ProductCarousel slides={list} options={OPTIONS}/>
+            </div>
         </section>
     );
 };

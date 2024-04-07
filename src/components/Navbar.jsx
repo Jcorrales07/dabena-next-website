@@ -1,19 +1,80 @@
 "use client"
 
-import Image from "next/image";
 import {
     Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, ButtonGroup
 } from "@nextui-org/react";
 
-export default function Navbar() {
+import {
+    Image,
+    Navbar,
+    NavbarBrand,
+    NavbarContent,
+    NavbarItem,
+    NavbarMenuToggle,
+    NavbarMenu,
+    NavbarMenuItem,
+    Link
+} from "@nextui-org/react";
+import {useState} from "react";
 
-    return <header className="fixed right-0 left-0 top-0 py-3 px-6 border-b-2/50 bg-white backdrop-blur-lg z-[100] border-black shadow-[0_35px_60px_-15px_rgba(68,64,60,0.5)]">
-        <div className='flex flex-row justify-between'>
-            <Image src={'/assets/LogoDabena.svg'} alt={'Logo de Dabena'} width={40} height={40}/>
-            <MobileMenu/>
-            <DesktopMenu/>
-        </div>
-    </header>
+
+export default function NavbarComponent() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const menuItems = [
+        "Inicio",
+        "Productos",
+        "Puntos de venta",
+        "Quiero ser mayorista!",
+    ];
+
+    return (
+        <Navbar maxWidth={'full'} onMenuOpenChange={setIsMenuOpen} isBordered={true} shouldHideOnScroll={true}>
+            <NavbarContent className='flex justify-between'>
+                <NavbarBrand>
+                    <Link href='/' className={'hover:opacity-100 text-black'}>
+                        <Image className={'rounded-none mr-3 h-auto'} src={'/assets/LogoDabena.svg'} alt={'Logo de Dabena'} width={40} />
+                        <p className="ml-2 font-bold text-inherit text-xl">Dabena</p>
+                    </Link>
+                </NavbarBrand>
+
+                <NavbarMenuToggle
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                    className="sm:hidden"
+                />
+            </NavbarContent>
+
+            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+                {menuItems.map((item, index) => (
+                    <NavbarItem key={`${item}-${index}`}>
+                        <Link
+                            color='foreground'
+                            href="#"
+                        >
+                            {item}
+                        </Link>
+                    </NavbarItem>
+                ))}
+            </NavbarContent>
+
+            <NavbarMenu>
+                {menuItems.map((item, index) => (
+                    <NavbarMenuItem key={`${item}-${index}`}>
+                        <Link
+                            color={
+                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                            }
+                            className="w-full"
+                            href="#"
+                            size="lg"
+                        >
+                            {item}
+                        </Link>
+                    </NavbarMenuItem>
+                ))}
+            </NavbarMenu>
+        </Navbar>
+    );
 }
 
 function MobileMenu() {
@@ -40,10 +101,13 @@ function DesktopMenu() {
     return (
         <nav className={'hidden lg:flex items-center gap-2'}>
             <Button className={'text-black text-medium'} color={'success'} variant={'light'}>Inicio</Button>
-            <Button className={'text-black text-medium'} color={'success'}  variant={'light'}>Productos</Button>
-            <Button className={'text-black text-medium'} color={'success'}  variant={'light'}>Puntos de venta</Button>
-            <Button className={'text-black text-medium'} color={'success'}  variant={'light'}>Quiero ser mayorista!</Button>
+            <Button className={'text-black text-medium'} color={'success'} variant={'light'}>Productos</Button>
+            <Button className={'text-black text-medium'} color={'success'} variant={'light'}>Puntos de venta</Button>
+            <Button className={'text-black text-medium'} color={'success'} variant={'light'}>Quiero ser
+                mayorista!</Button>
         </nav>
     );
 }
+
+
 
