@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCarousel from "@/components/product-carousel-section/ProductCarousel";
+import ProductCarousel from "@/components/landing-page/product-carousel-section/ProductCarousel";
 
 const OPTIONS = {dragFree: true}
 const SLIDE_COUNT = 12
@@ -50,13 +50,16 @@ const list = [
 
 const ProductCarouselSection = () => {
     return (
-        <section className="lg:px-[64px] lg:py-[112px] px-[20px] py-[64px] w-full flex min-h-screen flex-col border-2 border-black">
+        <section
+            className="lg:px-[64px] lg:py-[112px] px-[20px] py-[64px] w-full flex flex-col">
 
-            <div className={'border border-black'}>
-                {/*Headline*/}
-                <h1>Productos Destacados</h1>
-                {/*sub headline*/}
-                <h2>Descubre lo mas querido por nuestros clientes!</h2>
+            <div className={'flex flex-col gap-[80px]'}>
+
+                <section>
+                    <h2 className="text-4xl lg:text-5xl font-bold mb-4">Productos Destacados</h2>
+                    <p className="text-base lg:text-lg">Descubre lo mas querido por nuestros clientes!</p>
+                </section>
+
                 {/*Personalizar las targetas de los productos*/}
                 <ProductCarousel slides={list} options={OPTIONS}/>
             </div>

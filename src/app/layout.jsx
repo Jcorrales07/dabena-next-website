@@ -6,6 +6,7 @@ const font = Sora({subsets: ["latin"]});
 
 import { Providers } from "@/app/providers";
 import NavbarComponent from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
     title: "Dabena GNS",
@@ -19,7 +20,7 @@ export default function RootLayout({children}) {
             <Providers>
                 <NavbarComponent/>
                 {children}
-                <div>Footer</div>
+                <Footer />
             </Providers>
         </body>
         </html>

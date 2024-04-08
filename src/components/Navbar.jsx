@@ -16,6 +16,7 @@ import {
     Link
 } from "@nextui-org/react";
 import {useState} from "react";
+import {DabenaLogoTEXT} from "@/components/DabenaLogo";
 
 
 export default function NavbarComponent() {
@@ -32,10 +33,7 @@ export default function NavbarComponent() {
         <Navbar maxWidth={'full'} onMenuOpenChange={setIsMenuOpen} isBordered={true} shouldHideOnScroll={true}>
             <NavbarContent className='flex justify-between'>
                 <NavbarBrand>
-                    <Link href='/' className={'hover:opacity-100 text-black'}>
-                        <Image className={'rounded-none mr-3 h-auto'} src={'/assets/LogoDabena.svg'} alt={'Logo de Dabena'} width={40} />
-                        <p className="ml-2 font-bold text-inherit text-xl">Dabena</p>
-                    </Link>
+                    <DabenaLogoTEXT />
                 </NavbarBrand>
 
                 <NavbarMenuToggle
