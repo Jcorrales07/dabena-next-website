@@ -19,15 +19,8 @@ import {useState} from "react";
 import {DabenaLogoTEXT} from "@/components/DabenaLogo";
 
 
-export default function NavbarComponent() {
+export default function NavbarComponent({menuItems}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const menuItems = [
-        "Inicio",
-        "Productos",
-        "Puntos de venta",
-        "Quiero ser mayorista!",
-    ];
 
     return (
         <Navbar maxWidth={'full'} onMenuOpenChange={setIsMenuOpen} isBordered={true} shouldHideOnScroll={true}>
@@ -44,12 +37,12 @@ export default function NavbarComponent() {
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 {menuItems.map((item, index) => (
-                    <NavbarItem key={`${item}-${index}`}>
+                    <NavbarItem key={`${item.name}-${index}`}>
                         <Link
                             color='foreground'
-                            href="#"
+                            href={item.path}
                         >
-                            {item}
+                            {item.name}
                         </Link>
                     </NavbarItem>
                 ))}
@@ -57,16 +50,16 @@ export default function NavbarComponent() {
 
             <NavbarMenu>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
+                    <NavbarMenuItem key={`${item.name}-${index}`}>
                         <Link
                             color={
                                 index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
                             }
                             className="w-full"
-                            href="#"
+                            href={item.path}
                             size="lg"
                         >
-                            {item}
+                            {item.name}
                         </Link>
                     </NavbarMenuItem>
                 ))}

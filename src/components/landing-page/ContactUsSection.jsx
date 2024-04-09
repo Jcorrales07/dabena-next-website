@@ -6,7 +6,7 @@ import {FaLocationDot} from "react-icons/fa6";
 
 function ContactUsSection(props) {
     return (
-        <section className="w-full flex flex-col lg:px-[64px] lg:py-[112px] px-[20px] py-[64px] gap-[48px] lg:gap-[80px]">
+        <section id={"contacto"} className="w-full flex flex-col lg:px-[64px] lg:py-[112px] px-[20px] py-[64px] gap-[48px] lg:gap-[80px]">
             <section>
                 <h2 className="text-4xl lg:text-5xl font-bold mb-4">Contáctanos</h2>
                 <p className="text-base lg:text-lg">Encuentranos:</p>

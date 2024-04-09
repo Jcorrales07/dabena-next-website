@@ -5,7 +5,7 @@ import {FaStar} from "react-icons/fa";
 function TestimonialSection() {
     return (
         <section
-            className="w-full flex flex-col lg:px-[64px] lg:py-[112px] px-[20px] py-[64px] gap-[48px] lg:gap-[80px] items-center ">
+            className="w-full flex flex-col lg:px-[64px] lg:py-[112px] px-[20px] py-[64px] gap-[48px] lg:gap-[80px] items-center">
 
             <section className="flex flex-col items-center align-middle">
                 <h2 className="text-4xl lg:text-5xl font-bold mb-4">Testimonios de clientes</h2>
