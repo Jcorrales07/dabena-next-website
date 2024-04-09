@@ -25,7 +25,7 @@ export default function Footer() {
                     <div>Terminos de Servicio</div>
                     <div>Configuracion de Cookies</div>
 
-                    <div>© 2024 Dabena. Todos los derechos reservados.</div>
+                    <div className='text-center'>© 2024 Dabena. <br className="lg:hidden" /><span>Todos los derechos reservados.</span> </div>
                 </div>
             </section>
         </footer>
