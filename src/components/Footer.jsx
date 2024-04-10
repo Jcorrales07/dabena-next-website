@@ -10,7 +10,7 @@ export default function Footer({menuItems}) {
             className="lg:px-[64px] lg:py-[80px] lg:gap-[80px] gap-[48px] px-[20px] py-[48px] w-full flex flex-col items-center">
             <section className={'w-full flex flex-col lg:flex-row items-center gap-4 justify-between align-middle'}>
                 <DabenaLogoSVG/>
-                <div className={'flex flex-col gap-4 lg:flex-row justify-center w-full'}>
+                <div className={'flex flex-col gap-4 lg:flex-row items-center justify-center w-full'}>
                     {menuItems.map((item, index) => (
                         <Link
                             key={index}

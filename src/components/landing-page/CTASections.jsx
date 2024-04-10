@@ -46,7 +46,7 @@ export function InfoSection({direction, title, subtext, img_url, img_alt}) {
         </section>
 
         <section>
-            <Image src={img_url} alt={img_alt} className="w-screen"/>
+            <Image src={img_url} alt={img_alt} className="w-screen" radius={'sm'}/>
         </section>
     </section>
 }
