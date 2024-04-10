@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card, CardBody, CardFooter, CardHeader, Divider, Image, Link} from "@nextui-org/react";
 import {FaStar} from "react-icons/fa";
+import {DabenaLogo} from "@/components/DabenaLogo";
 
 function TestimonialSection() {
     return (
@@ -87,7 +88,8 @@ function TestimonialSection() {
                     </CardHeader>
                     <Divider/>
                     <CardBody>
-                        <p>“Desde que comencé a usar los productos de Dabena, mi salud ha mejorado significativamente.”</p>
+                        <p>“Desde que comencé a usar los productos de Dabena, mi salud ha mejorado
+                            significativamente.”</p>
                     </CardBody>
                     <Divider/>
                     <CardFooter>
@@ -101,6 +103,37 @@ function TestimonialSection() {
                     </CardFooter>
                 </Card>
             </section>
+        </section>
+    );
+}
+
+export function SingleTestimonialSection() {
+    return (
+        <section
+            className="w-full flex flex-col lg:px-[64px] lg:py-[112px] px-[20px] py-[64px] gap-[48px] lg:gap-[80px] items-center">
+
+            <Card className="max-w-screen-sm bg-transparent" shadow="none" radius="none">
+                <CardHeader className="flex justify-center">
+                    <DabenaLogo size={40}/>
+                </CardHeader>
+                <CardBody>
+                    <p className="text-center text-xl">Los productos de Dabena han sido una bendición para mí. Han mejorado mi salud de manera significativa y me siento mucho mejor. ¡Recomendado al 100%!</p>
+                </CardBody>
+                <CardFooter className={"flex flex-col justify-center gap-4"}>
+                    <Image
+                        alt="nextui logo"
+                        height={60}
+                        width={60}
+                        radius="full"
+                        src="/assets/anais.jpg"
+                        className="object-cover min-h-[60px] max-h-[60px]"
+                    />
+                    <div className="flex flex-col text-center">
+                        <p className="text-md">Anaïs Bynens</p>
+                        <p className="text-small text-default-500">Gerente, Empresa XYZ</p>
+                    </div>
+                </CardFooter>
+            </Card>
 
         </section>
     );

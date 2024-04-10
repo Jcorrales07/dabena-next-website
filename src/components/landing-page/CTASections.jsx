@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Card, CardBody, CardFooter, CardHeader, Image, Link} from "@nextui-org/react";
+import {DabenaLogo} from "@/components/DabenaLogo";
 
 export function ExploreCTASection() {
     return (
@@ -58,13 +59,7 @@ export function BenefitSection() {
 
             <Card shadow={"none"} radius={"none"} className="bg-transparent">
                 <CardHeader className="flex justify-center">
-                    <Image
-                        alt="dabena logo"
-                        height={30}
-                        radius="none"
-                        src="assets/LogoDabena.svg"
-                        width={30}
-                    />
+                    <DabenaLogo />
                 </CardHeader>
                 <CardBody className={'p-0'}>
                     <section className="flex flex-col justify-center">

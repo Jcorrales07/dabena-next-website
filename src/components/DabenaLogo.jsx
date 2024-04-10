@@ -31,8 +31,21 @@ export default function DabenaLogoSVG() {
 export function DabenaLogoTEXT() {
     return (
         <Link href='/' className={'hover:opacity-100 text-black flex items-center'}>
-            <Image radius="none" className={'mr-3 h-auto'} src={'/assets/LogoDabena.svg'} alt={'Logo de Dabena'} width={40} />
+            <Image radius="none" className={'mr-3 h-auto'} src={'/assets/LogoDabena.svg'} alt={'Logo de Dabena'}
+                   width={40}/>
             <p className="ml-2 font-bold text-inherit text-xl">Dabena</p>
         </Link>
+    );
+}
+
+export function DabenaLogo({size}) {
+    return (
+        <Image
+            alt="dabena logo"
+            height={size}
+            radius="none"
+            src="assets/LogoDabena.svg"
+            width={size}
+        />
     );
 }

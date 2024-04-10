@@ -31,13 +31,13 @@ const ProductCarousel = (props) => {
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {slides.map((item, index) => (
-                        <Card className={'embla__slide w-full'} shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
+                        <Card className={'embla__slide'} shadow="sm" radius="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
                             <CardBody className="overflow-visible p-0">
                                 <Image
                                     shadow="sm"
-                                    radius="lg"
+                                    radius="none"
                                     alt={item.title}
-                                    className="w-full object-cover h-full"
+                                    className="w-screen object-cover h-full"
                                     src={'/assets/Frasco-Vigo-oyrK-8JQ.png'}
                                 />
                             </CardBody>
