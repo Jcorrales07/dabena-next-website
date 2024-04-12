@@ -2,7 +2,7 @@
 
 
 import React, {useState, useEffect} from 'react';
-import {Button, Card, CardBody, CardFooter, CardHeader, Image} from "@nextui-org/react";
+import {Button, Card, CardBody, CardFooter, CardHeader, Image, Link} from "@nextui-org/react";
 
 function ProductsCatalog(props) {
     const [cantProducts, setCantProducts] = useState(6);
@@ -47,7 +47,7 @@ function ProductsCatalog(props) {
 
             <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
                 {[...Array(cantProducts)].map((_, index) => (
-                    <Card key={index} className="w-full" isPressable radius="none">
+                    <Card key={index} className="w-full" radius="none">
                         <CardHeader className="p-0">
                             <Image
                                 alt="nextui logo"
@@ -67,7 +67,7 @@ function ProductsCatalog(props) {
                             </section>
                         </CardBody>
                         <CardFooter>
-                            {isClient && <Button radius="none" variant="ghost" className="w-full text-base">Comprar
+                            {isClient && <Button href={`productos/${index}`} as={Link} radius="none" variant="ghost" className="w-full text-base">Comprar
                                 ahora</Button>}
 
                         </CardFooter>
